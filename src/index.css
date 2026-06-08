@@ -16,29 +16,35 @@ body {
 }
 
 @layer utilities {
+
     /*first line (div) goes to the -100 after it came to the 250 on x bar*/
     @keyframes loading {
         0% {
             transform: translateX(-100%);
         }
+
         100% {
             transform: translateX(250%);
         }
     }
+
     .animate-loading-bar {
         animation: loading 1.2s ease infinite;
     }
 
     /* For blink*/
     @keyframes blink {
+
         0%,
         100% {
             opacity: 1;
         }
+
         50% {
             opacity: 0;
         }
     }
+
     .animate-blink {
         animation: blink 1.2s step-end infinite;
     }
@@ -49,11 +55,13 @@ body {
             opacity: 0;
             transform: translateY(-10px);
         }
+
         100% {
             opacity: 1;
             transform: translateY(0);
         }
     }
+
     .animate-fade-in {
         animation: fade-in 0.5s ease-out forwards;
     }
@@ -63,9 +71,11 @@ body {
     0% {
         background-position: 100% 100%;
     }
+
     50% {
         background-position: 0% 0%;
     }
+
     100% {
         background-position: 100% 100%;
     }
@@ -81,6 +91,7 @@ body {
     transform: translateY(20px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
+
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);

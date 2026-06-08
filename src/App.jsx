@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import { LoadingScreen } from "./components/LoadingScreen";
-import { Navbar } from "./components/Navbar";
-import { MobileMenu } from "./components/MobileMenu";
-import { Home } from "./components/sections/Home";
-import { About } from "./components/sections/About";
-import { Projects } from "./components/sections/Projects";
-import { Contact } from "./components/sections/Contact";
-import { Footer } from "./components/Footer";
+import { LoadingScreen } from "./components/common/LoadingScreen";
+import { Navbar } from "./components/common/Navbar";
+import { MobileMenu } from "./components/common/MobileMenu";
+import { Home } from "./components/sections/home/Home";
+import { About } from "./components/sections/about/About";
+import { Projects } from "./components/sections/projects/Projects";
+import { Contact } from "./components/sections/contact/Contact";
+import { Footer } from "./components/common/Footer";
+import { CursorBackground } from "./components/common/CursorBackground";
 import ReactGA from "react-ga4";
 
 ReactGA.initialize("G-TEY7V8KVEQ");
@@ -30,10 +31,10 @@ function App() {
             )}
             {/* If isloaded = true display this */}
             <div
-                className={`min-h-screen transition-opacity duration-700 ${
-                    isLoaded ? "opacity-100" : "opacity-0"
-                } bg-[#212428] text-gray-100`}
+                className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"
+                    } bg-[#212428] text-gray-100`}
             >
+                <CursorBackground />
                 <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
                 <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
                 <Home />

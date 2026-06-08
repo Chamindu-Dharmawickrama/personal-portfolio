@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { RevealOnScroll } from "../RevealOnScroll";
+import { RevealOnScroll } from "../../common/RevealOnScroll";
 import { FaProjectDiagram, FaGithub } from "react-icons/fa";
 
 export const Projects = () => {
