@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 45px;
+}
+
 html,
 body {
     margin: 0;
@@ -95,4 +100,16 @@ body {
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@keyframes certFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

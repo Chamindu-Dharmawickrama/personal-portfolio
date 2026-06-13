@@ -83,7 +83,7 @@ const skillCategories = [
 
 export const Skills = () => {
     return (
-        <div className="mt-12 sm:mt-15 mx-auto px-6 w-full max-w-5xl">
+        <div className="mt-12 sm:mt-15 mx-auto px-6 w-full max-w-5xl hide-cursor-effect">
             <div
                 className="relative rounded-3xl p-6 border border-white/[0.06]"
                 style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.07) 0%, transparent 70%)" }}
@@ -146,7 +146,6 @@ export const Skills = () => {
                                             />
                                         </div>
 
-                                        {/* Icon wrapper with layered glow */}
                                         <div className="relative flex items-center justify-center w-10 h-10
                                                         transition-transform duration-400 group-hover:scale-115">
                                             <div

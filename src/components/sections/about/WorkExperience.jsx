@@ -78,7 +78,7 @@ const WorkExperienceCard = ({ job }) => {
     return (
         <div
             className="relative rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden
-                       transition-all duration-500 hover:border-white/20 hover:shadow-[0_0_40px_rgba(59,130,246,0.1)]"
+                       transition-all duration-500 hover:border-white/20 hover:shadow-[0_0_40px_rgba(59,130,246,0.1)] hide-cursor-effect"
         >
             <div className="relative p-4 sm:p-6 border-b border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 relative z-10">

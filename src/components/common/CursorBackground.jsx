@@ -6,6 +6,8 @@ export const CursorBackground = () => {
     const smoothMouseRef = useRef({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
     const ripplesRef = useRef([]);
     const lastPosRef = useRef({ x: -999, y: -999 });
+    const targetOpacityRef = useRef(1);
+    const currentOpacityRef = useRef(1);
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -27,12 +29,16 @@ export const CursorBackground = () => {
             mouseRef.current.x = e.clientX;
             mouseRef.current.y = e.clientY;
 
+            // Check if hovering over element that should hide the cursor effect
+            const isHidden = e.target.closest('.hide-cursor-effect');
+            targetOpacityRef.current = isHidden ? 0 : 1;
+
             const dx = e.clientX - lastPosRef.current.x;
             const dy = e.clientY - lastPosRef.current.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
 
             // Only spawn a new ripple if cursor has moved enough
-            if (dist > 18) {
+            if (dist > 18 && !isHidden) {
                 ripplesRef.current.push({
                     x: e.clientX,
                     y: e.clientY,
@@ -63,13 +69,17 @@ export const CursorBackground = () => {
             smoothMouseRef.current.x += (mouseRef.current.x - smoothMouseRef.current.x) * lerpFactor;
             smoothMouseRef.current.y += (mouseRef.current.y - smoothMouseRef.current.y) * lerpFactor;
 
+            // Smooth opacity transition for fading out effect
+            currentOpacityRef.current += (targetOpacityRef.current - currentOpacityRef.current) * 0.15;
+            const opacity = currentOpacityRef.current;
+
             const sx = smoothMouseRef.current.x;
             const sy = smoothMouseRef.current.y;
 
             // Ambient cursor glow
             const glow = ctx.createRadialGradient(sx, sy, 0, sx, sy, 140);
-            glow.addColorStop(0, "rgba(80, 200, 255, 0.10)");
-            glow.addColorStop(0.5, "rgba(80, 160, 255, 0.04)");
+            glow.addColorStop(0, `rgba(80, 200, 255, ${0.10 * opacity})`);
+            glow.addColorStop(0.5, `rgba(80, 160, 255, ${0.04 * opacity})`);
             glow.addColorStop(1, "rgba(80, 160, 255, 0)");
             ctx.fillStyle = glow;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -106,13 +116,15 @@ export const CursorBackground = () => {
             }
 
             // Small bright cursor dot
-            ctx.beginPath();
-            ctx.arc(sx, sy, 4, 0, Math.PI * 2);
-            const dotGrad = ctx.createRadialGradient(sx, sy, 0, sx, sy, 4);
-            dotGrad.addColorStop(0, "rgba(180, 230, 255, 0.9)");
-            dotGrad.addColorStop(1, "rgba(80, 200, 255, 0)");
-            ctx.fillStyle = dotGrad;
-            ctx.fill();
+            if (opacity > 0.01) {
+                ctx.beginPath();
+                ctx.arc(sx, sy, 4, 0, Math.PI * 2);
+                const dotGrad = ctx.createRadialGradient(sx, sy, 0, sx, sy, 4);
+                dotGrad.addColorStop(0, `rgba(180, 230, 255, ${0.9 * opacity})`);
+                dotGrad.addColorStop(1, "rgba(80, 200, 255, 0)");
+                ctx.fillStyle = dotGrad;
+                ctx.fill();
+            }
 
             animationId = requestAnimationFrame(animate);
         };

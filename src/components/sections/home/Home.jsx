@@ -64,7 +64,7 @@ export const Home = () => {
         <RevealOnScroll delay={"-50px"}>
             <section
                 id="home"
-                className=" min-h-screen w-full flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 pt-16 sm:pt-20"
+                className=" min-h-screen w-full flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 pt-20 sm:pt-20"
             >
                 <div className="flex flex-col items-center max-w-7xl mx-auto w-full py-4 sm:py-6 md:py-8 mt-0 sm:mt-2 md:mt-4 gap-10">
                     <div className="flex flex-col items-center justify-between gap-6 sm:gap-8 w-full lg:flex-row">
@@ -78,8 +78,7 @@ export const Home = () => {
                                 </h1>
                             </div>
 
-                            <div className="mt-4 sm:mt-5 md:mt-6 lg:mt-0 xl:mt-5 max-w-xl px-4 sm:px-0 mx-auto lg:mx-0">
-                                {/* Accent bar */}
+                            <div className="mt-4 sm:mt-5 md:mt-6 lg:mt-0 xl:mt-5 max-w-xl px-4 sm:px-0 mx-auto lg:mx-0 hide-cursor-effect">
                                 <div className="w-10 h-[3px] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mb-4 mx-auto lg:mx-0" />
                                 <p className="text-base sm:text-lg text-gray-300 leading-[1.9] text-justify">
                                     I'm passionate about using{" "}
@@ -100,7 +99,6 @@ export const Home = () => {
                                 </p>
                             </div>
 
-                            {/* Quick stats */}
                             <div className="grid grid-cols-2 gap-x-6 gap-y-5 mt-7 w-full max-w-xs mx-auto lg:flex lg:items-center lg:gap-0 lg:max-w-none lg:mx-0 lg:justify-start">
                                 {[
                                     { value: "10+", label: "Projects" },
@@ -152,13 +150,10 @@ export const Home = () => {
                         {/*image*/}
                         <div className="order-2 lg:order-2 mt-8 lg:mt-0">
                             <div className="relative group">
-                                {/* Animated gradient glow background */}
                                 <div className="absolute -inset-2 rounded-xl blur-2xl bg-gradient-to-r from-blue-500/30 via-cyan-400/20 to-blue-500/30 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
-                                {/* Secondary glow layer */}
                                 <div className="absolute -inset-1 rounded-xl blur-xl bg-gradient-to-br from-blue-400/20 to-cyan-400/10 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                                {/* Main image container with border glow */}
                                 <div className="relative bg-gradient-to-br p-0.5 rounded-xl overflow-hidden">
                                     <img
                                         src="/chaminduNew.jpg"
@@ -167,12 +162,10 @@ export const Home = () => {
                                     />
                                 </div>
 
-                                {/* Animated accent line */}
                                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             </div>
                         </div>
                     </div>
-
 
                 </div>
             </section>

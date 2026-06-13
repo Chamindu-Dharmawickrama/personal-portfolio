@@ -14,14 +14,16 @@ export const About = () => {
                 id="about"
                 className="min-h-screen flex flex-col items-center justify-center py-20"
             >
-                <div className="max-w-3xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-cyan-300 bg-clip-text text-transparent text-center">
-                        About me
+                <div className="max-w-3xl mx-auto px-4 mb-10">
+                    <h2 className="projects-title text-center">
+                        About{" "}
+                        <span className="projects-title-accent">
+                            me
+                        </span>
                     </h2>
                 </div>
 
-                {/* Bio Card */}
-                <div className="relative max-w-3xl ml-5 sm:ml-0 mr-5 sm:mr-0 mx-auto px-2">
+                <div className="relative max-w-3xl ml-5 sm:ml-0 mr-5 sm:mr-0 mx-auto px-2 hide-cursor-effect">
                     <div className="relative rounded-2xl p-6 sm:p-10 border border-white/10 hover:-translate-y-1 transition-all duration-300">
                         <span className="absolute top-4 left-6 text-6xl font-serif text-blue-500/20 leading-none select-none">"</span>
 
@@ -69,11 +71,10 @@ export const About = () => {
                             <button
                                 key={key}
                                 onClick={() => setOption(key)}
-                                className={`w-full text-center py-2.5 px-2 text-xs sm:text-sm font-semibold rounded-xl transition-all duration-300 cursor-pointer tracking-wide ${
-                                    option === key
-                                        ? "bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.45)] scale-[1.02]"
-                                        : "text-white/50 hover:text-white/90 hover:bg-white/8"
-                                }`}
+                                className={`w-full text-center py-2.5 px-2 text-xs sm:text-sm font-semibold rounded-xl transition-all duration-300 cursor-pointer tracking-wide ${option === key
+                                    ? "bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.45)] scale-[1.02]"
+                                    : "text-white/50 hover:text-white/90 hover:bg-white/8"
+                                    }`}
                             >
                                 {label}
                             </button>

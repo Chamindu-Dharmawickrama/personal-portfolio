@@ -52,7 +52,6 @@ const educationData = [
     },
 ];
 
-/* Shared card markup — avoids duplicating JSX for left/right */
 const EduCard = ({ item }) => (
     <div
         className="relative rounded-2xl p-4 w-full cursor-default overflow-hidden
@@ -77,7 +76,6 @@ const EduCard = ({ item }) => (
                         transition-transform duration-700 pointer-events-none
                         bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
 
-        {/* Tag + period */}
         <div className="flex items-center justify-between mb-2 flex-wrap gap-1">
             <span className={`text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-gradient-to-r ${item.tagColor} text-white`}>
                 {item.tag}
@@ -109,7 +107,7 @@ export const Education = () => {
     return (
         <div className="mt-16 w-full max-w-4xl mx-auto px-8">
 
-            {/* ── MOBILE: left-spine single-column timeline ─────────────── */}
+            {/* MOBILE: left-spine single-column timeline */}
             <div className="relative md:hidden">
                 <div
                     className="absolute left-4 top-0 bottom-0 w-0.5"
@@ -122,7 +120,6 @@ export const Education = () => {
                 <div className="flex flex-col gap-8">
                     {educationData.map((item, idx) => (
                         <div key={idx} className="relative flex items-start gap-4 pl-12">
-                            {/* Node */}
                             <div
                                 className="absolute left-0 top-3 w-8 h-8 rounded-full flex items-center justify-center text-sm shrink-0
                                            transition-all duration-300 hover:scale-110"
@@ -142,9 +139,8 @@ export const Education = () => {
                 </div>
             </div>
 
-            {/* ── DESKTOP: center-trunk alternating tree ────────────────── */}
+            {/* DESKTOP: center-trunk alternating tree */}
             <div className="relative hidden md:block">
-                {/* Central trunk */}
                 <div
                     className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 z-0"
                     style={{
@@ -157,16 +153,13 @@ export const Education = () => {
                     {educationData.map((item, idx) => {
                         const isLeft = idx % 2 === 0;
                         return (
-                            <div key={idx} className="relative flex items-center">
+                            <div key={idx} className="relative flex items-center hide-cursor-effect">
 
-                                {/* Left slot */}
                                 <div className="w-1/2 pr-10 flex justify-end">
                                     {isLeft && <EduCard item={item} />}
                                 </div>
 
-                                {/* Center node */}
                                 <div className="absolute left-1/2 -translate-x-1/2 z-10 flex items-center justify-center">
-                                    {/* Branch connector */}
                                     <div
                                         className="absolute h-px w-8"
                                         style={{
@@ -175,7 +168,6 @@ export const Education = () => {
                                             opacity: 0.6,
                                         }}
                                     />
-                                    {/* Node dot */}
                                     <div
                                         className="w-10 h-10 rounded-full flex items-center justify-center text-base z-10
                                                    transition-all duration-300 hover:scale-110"
@@ -189,7 +181,6 @@ export const Education = () => {
                                     </div>
                                 </div>
 
-                                {/* Right slot */}
                                 <div className="w-1/2 pl-10 flex justify-start">
                                     {!isLeft && <EduCard item={item} />}
                                 </div>

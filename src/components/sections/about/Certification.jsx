@@ -63,10 +63,10 @@ export const Certification = () => {
     const cert = certificationData[active];
 
     return (
-        <div className="mt-16 w-full max-w-xl mx-auto px-7">
+        <div className="mt-16 w-full max-w-xl mx-auto px-7" style={{ animation: "certFadeIn 0.35s ease both" }}>
             {/* Slider card */}
             <div
-                className="relative rounded-2xl overflow-hidden transition-all duration-500"
+                className="relative rounded-2xl overflow-hidden transition-all duration-500 hide-cursor-effect"
                 style={{
                     border: "1px solid rgba(255,255,255,0.15)",
                     background: "rgba(255,255,255,0.02)",
@@ -78,10 +78,9 @@ export const Certification = () => {
                     style={{ opacity: fading ? 0 : 1, transition: "opacity 220ms ease" }}
                 >
                     <img
-                        key={active}
                         src={cert.image}
                         alt={`${cert.title} certificate`}
-                        className="w-full h-auto object-contain block transition-opacity duration-500"
+                        className="w-full h-auto object-contain block"
                         loading="lazy"
                         style={{ maxHeight: "280px", objectFit: "contain", background: "#fff" }}
                     />
@@ -113,7 +112,7 @@ export const Certification = () => {
                     </button>
                 </div>
 
-                {/* ── Card info ── */}
+                {/* Card info */}
                 <div
                     className="p-5"
                     style={{ opacity: fading ? 0 : 1, transition: "opacity 220ms ease" }}
@@ -180,7 +179,7 @@ export const Certification = () => {
                             {certificationData.map((c, i) => (
                                 <button
                                     key={i}
-                                    onClick={() => setActive(i)}
+                                    onClick={() => goTo(i)}
                                     className="rounded-full transition-all duration-300 cursor-pointer"
                                     style={{
                                         width: i === active ? "20px" : "6px",
