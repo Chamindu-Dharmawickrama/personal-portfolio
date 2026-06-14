@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { TiThMenu } from "react-icons/ti";
 
+// nav
 const NavLink = ({ href, children }) => (
     <a
         href={href}
