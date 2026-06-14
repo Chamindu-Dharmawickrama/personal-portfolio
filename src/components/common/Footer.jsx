@@ -38,27 +38,27 @@ export const Footer = () => {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <a href="https://github.com/Chamindu-Dharmawickrema" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/Chamindu-Dharmawickrama" target="_blank" rel="noopener noreferrer"
               className="relative flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white transition-all duration-500 group overflow-hidden hover:scale-105 hover:border-cyan-400/40 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]">
               <span className="absolute inset-0 bg-white/10 rounded-full scale-0 opacity-0 group-hover:scale-150 group-hover:opacity-100 transition-all duration-700 ease-out origin-center"></span>
               <FaGithub size={20} className="relative z-10" />
             </a>
-            <a href="https://www.linkedin.com/in/chamindu-dharmawickrema-066295312/" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/in/chamindu-dharmawickrama-066295312/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B2PUynfIeR12XtnPlCw1RNw%3D%3D" target="_blank" rel="noopener noreferrer"
               className="relative flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white transition-all duration-500 group overflow-hidden hover:scale-105 hover:border-blue-500/40 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]">
               <span className="absolute inset-0 bg-white/10 rounded-full scale-0 opacity-0 group-hover:scale-150 group-hover:opacity-100 transition-all duration-700 ease-out origin-center"></span>
               <FaLinkedin size={20} className="relative z-10" />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.instagram.com/chamindu_dharmawickrema/" target="_blank" rel="noopener noreferrer"
               className="relative flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white transition-all duration-500 group overflow-hidden hover:scale-105 hover:border-pink-500/40 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
               <span className="absolute inset-0 bg-white/10 rounded-full scale-0 opacity-0 group-hover:scale-150 group-hover:opacity-100 transition-all duration-700 ease-out origin-center"></span>
               <FaInstagram size={20} className="relative z-10" />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
+            <a href="https://x.com/ChaminduLDSD" target="_blank" rel="noopener noreferrer"
               className="relative flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white transition-all duration-500 group overflow-hidden hover:scale-105 hover:border-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]">
               <span className="absolute inset-0 bg-white/10 rounded-full scale-0 opacity-0 group-hover:scale-150 group-hover:opacity-100 transition-all duration-700 ease-out origin-center"></span>
               <FaXTwitter size={20} className="relative z-10" />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.tiktok.com/@chamindudharmawickrama?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"
               className="relative flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white transition-all duration-500 group overflow-hidden hover:scale-105 hover:border-cyan-500/40 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
               <span className="absolute inset-0 bg-white/10 rounded-full scale-0 opacity-0 group-hover:scale-150 group-hover:opacity-100 transition-all duration-700 ease-out origin-center"></span>
               <FaTiktok size={20} className="relative z-10" />

@@ -57,7 +57,7 @@
 }
 
 .projects-subtitle {
-    font-size: 13px;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.35);
     margin: 0;
     letter-spacing: 1px;
@@ -84,6 +84,10 @@
     background: var(--ghost-accent, #666);
     transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.42s ease;
     pointer-events: none;
+    /* Promote ghost cards to their own layers — prevents main thread repaints */
+    will-change: transform, opacity;
+    /* Isolate ghost cards from triggering global layout recalcs */
+    contain: layout style paint;
 }
 
 /* Far ghost cards */
@@ -140,9 +144,9 @@
     width: 100%;
     max-width: 900px;
     height: 480px;
-    background: rgba(20, 20, 30, 0.88);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    /* Replaced backdrop-filter:blur(24px) — too expensive on low-end GPUs.
+       Solid dark background delivers the same visual feel at zero blur cost. */
+    background: rgba(16, 16, 26, 0.97);
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.06);
     box-shadow:
@@ -153,6 +157,10 @@
     overflow: hidden;
     animation: cardEntrance 0.42s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     transition: box-shadow 0.4s ease;
+    /* Promote to own compositor layer so animations don't trigger full repaints */
+    will-change: transform, opacity;
+    /* Isolate layout recalculations to this card only */
+    contain: layout style;
 }
 
 .main-card:hover {
@@ -357,18 +365,18 @@
     overflow: hidden;
 }
 
-/* Ambient circles behind laptop */
+/* Ambient glow behind laptop — replaced filter:blur(40px) with a cheaper
+   radial-gradient that fades to transparent. Same visual result, zero blur cost. */
 .card-laptop-panel::before {
     content: "";
     position: absolute;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(var(--card-accent-rgb), 0.12), transparent 70%);
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(var(--card-accent-rgb), 0.13) 0%, rgba(var(--card-accent-rgb), 0.04) 50%, transparent 75%);
     border-radius: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    filter: blur(40px);
     pointer-events: none;
 }
 
@@ -379,7 +387,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.7));
+    /* Replaced filter:drop-shadow (repaints entire element tree) with
+       a box-shadow on the inner bezel — much cheaper on low-end GPUs */
 }
 
 .laptop-body {
@@ -400,7 +409,9 @@
     position: relative;
     box-shadow:
         inset 0 0 0 1px rgba(255, 255, 255, 0.03),
-        0 -2px 0 0 #1e1e2e;
+        0 -2px 0 0 #1e1e2e,
+        /* Depth shadow moved here from filter:drop-shadow on wrapper */
+        0 24px 48px rgba(0, 0, 0, 0.65);
 }
 
 .laptop-camera {
@@ -427,7 +438,9 @@
     object-fit: cover;
     object-position: top;
     display: block;
-    transition: transform 8s ease;
+    /* Reduced from 8s to 4s — 8s kept the compositor layer alive too long */
+    transition: transform 4s ease;
+    will-change: transform;
 }
 
 .laptop-wrapper:hover .laptop-screenshot {
@@ -569,7 +582,7 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
     .projects-section {
-        padding: 80px 32px 100px;
+        padding: 80px 28px 100px;
     }
 
     .card-stack-scene {
@@ -609,7 +622,7 @@
 
 @media (max-width: 480px) {
     .projects-section {
-        padding: 60px 32px 80px;
+        padding: 60px 28px 80px;
     }
 
     .card-stack-scene {
@@ -630,5 +643,40 @@
 
     .laptop-wrapper {
         max-width: 220px;
+    }
+}
+
+/* ── Performance: Reduced Motion ── */
+/* Respects OS-level "reduce motion" setting (battery saver, accessibility).
+   Disables all transitions and animations for affected users. */
+@media (prefers-reduced-motion: reduce) {
+
+    .main-card,
+    .card-ghost,
+    .tech-pill,
+    .card-btn,
+    .nav-btn,
+    .nav-dot,
+    .laptop-screenshot {
+        transition: none !important;
+        animation: none !important;
+        will-change: auto !important;
+    }
+
+    @keyframes cardEntrance {
+        from {
+            opacity: 1;
+            transform: none;
+        }
+
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    .card-exit-left,
+    .card-exit-right {
+        animation: none !important;
     }
 }

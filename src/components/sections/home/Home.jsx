@@ -81,21 +81,7 @@ export const Home = () => {
                             <div className="mt-4 sm:mt-5 md:mt-6 lg:mt-0 xl:mt-5 max-w-xl px-4 sm:px-0 mx-auto lg:mx-0 hide-cursor-effect">
                                 <div className="w-10 h-[3px] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mb-4 mx-auto lg:mx-0" />
                                 <p className="text-base sm:text-lg text-gray-300 leading-[1.9] text-justify">
-                                    I'm passionate about using{" "}
-                                    <span className="font-semibold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                                        technology
-                                    </span>{" "}
-                                    to create{" "}
-                                    <span className="text-cyan-400 font-medium">impactful solutions</span>{" "}
-                                    that address real-world problems. My portfolio showcases not only my{" "}
-                                    <span className="text-white font-medium">technical skills</span>{" "}
-                                    but also my dedication to{" "}
-                                    <span className="font-semibold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                                        continuous learning
-                                    </span>{" "}
-                                    and thoughtful design. I take pride in turning ideas into{" "}
-                                    <span className="text-cyan-400 font-medium">tangible results</span>{" "}
-                                    that drive progress and make a positive difference.
+                                    I’m a software developer passionate about building meaningful digital experiences that solve real problems. Through my portfolio, I share my skills, growth, and commitment to turning ideas into clean, effective solutions.
                                 </p>
                             </div>
 

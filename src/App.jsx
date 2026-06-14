@@ -20,6 +20,7 @@ function App() {
 
     //track the loading state
     const [isLoaded, setIsLoaded] = useState(false);
+    //const isLoaded = false
     //track the menu state
     const [menuOpen, setMenuOpen] = useState(false);
 

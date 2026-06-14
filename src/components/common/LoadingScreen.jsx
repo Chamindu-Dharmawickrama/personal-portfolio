@@ -23,7 +23,7 @@ export const LoadingScreen = ({ onComplete }) => {
                 //after 1.5 sec triger the onComplete funtion
                 setTimeout(() => {
                     onComplete();
-                }, 1200);
+                }, 1300);
             }
             //add late for each letter
         }, 60);
@@ -45,9 +45,9 @@ export const LoadingScreen = ({ onComplete }) => {
                             {text}
                         </span>
                         <span
-                            className={`ml-1 sm:ml-2 inline-block transition-opacity duration-300 ${isComplete ? "opacity-0" : "opacity-100"}`}
+                            className="ml-1 sm:ml-2 inline-block opacity-100"
                         >
-                            <span className="animate-blink text-blue-400">
+                            <span className="animate-blink text-cyan-400 font-black">
                                 |
                             </span>
                         </span>

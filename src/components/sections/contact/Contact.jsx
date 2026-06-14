@@ -6,14 +6,14 @@ import { RevealOnScroll } from "../../common/RevealOnScroll";
 const socials = [
     {
         label: "GitHub",
-        href: "https://github.com/Chamindu-Dharmawickrema",
+        href: "https://github.com/Chamindu-Dharmawickrama",
         icon: <FaGithub size={17} />,
         color: "#f3f4f6",
         colorBg: "rgba(243,244,246,0.07)",
     },
     {
         label: "LinkedIn",
-        href: "https://www.linkedin.com/in/chamindu-dharmawickrema-066295312/",
+        href: "https://www.linkedin.com/in/chamindu-dharmawickrama-066295312/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B2PUynfIeR12XtnPlCw1RNw%3D%3D",
         icon: <FaLinkedin size={17} />,
         color: "#0a66c2",
         colorBg: "rgba(10,102,194,0.12)",
@@ -55,7 +55,7 @@ export const Contact = () => {
 
     return (
         <RevealOnScroll>
-            <section id="contact" className="relative min-h-screen px-5 pt-[100px] pb-[120px] max-sm:px-5 max-sm:pt-[80px] max-sm:pb-[100px] flex flex-col items-center overflow-hidden">
+            <section id="contact" className="relative min-h-screen px-5 pt-[100px] pb-[120px] max-sm:px-7 max-sm:pt-[80px] max-sm:pb-[100px] flex flex-col items-center overflow-hidden">
                 <div className="absolute top-[15%] left-1/2 -translate-x-1/2 w-[700px] h-[700px] max-sm:w-[400px] max-sm:h-[400px] bg-[radial-gradient(circle,rgba(37,99,235,0.07)_0%,transparent_70%)] max-sm:bg-[radial-gradient(circle,rgba(37,99,235,0.15)_0%,transparent_70%)] pointer-events-none z-0"></div>
                 <div className="absolute bottom-[10%] right-[10%] w-[350px] h-[350px] max-sm:w-[250px] max-sm:h-[250px] bg-[radial-gradient(circle,rgba(103,232,249,0.05)_0%,transparent_70%)] max-sm:bg-[radial-gradient(circle,rgba(103,232,249,0.12)_0%,transparent_70%)] pointer-events-none z-0"></div>
 

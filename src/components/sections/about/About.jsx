@@ -30,29 +30,29 @@ export const About = () => {
                         <p className="text-gray-200 text-[17px] leading-[1.9] mb-5 text-center">
                             I am a{" "}
                             <span className="font-semibold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                                software engineering undergraduate
+                                software engineering undergraduate with hands on internship experience
                             </span>{" "}
-                            with a strong passion for building meaningful and innovative{" "}
+                            and a strong passion for building meaningful, innovative{" "}
                             <span className="text-white font-medium">
                                 digital solutions
                             </span>
-                            . I enjoy learning how technology can be used to solve{" "}
+                            . Through my internship, I gained practical exposure to{" "}
                             <span className="text-cyan-400 font-medium">
-                                real-world challenges
-                            </span>{" "}
-                            and create better experiences for users. My journey in software development has strengthened my curiosity, problem-solving mindset, and commitment to continuous growth.
+                                real world development workflows
+                            </span>
+                            , teamwork, and problem-solving, which strengthened my ability to turn ideas into reliable and user-focused applications.
                         </p>
 
                         <div className="w-16 h-px bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto mb-5 rounded-full" />
 
                         <p className="text-gray-300 text-[17px] leading-[1.9] text-center">
-                            I am particularly interested in{" "}
+                            I am especially interested in{" "}
                             <span className="text-cyan-400 font-medium">modern web technologies</span>{" "}
-                            and the process of transforming ideas into practical, impactful applications. I value creativity, adaptability, and collaboration, and I am always eager to explore{" "}
+                            and in creating practical solutions that deliver real value. I value creativity, adaptability, and collaboration, and I continue to grow by learning from real projects, new technologies, and the challenges that come with building software in{" "}
                             <span className="font-semibold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                                new ideas
-                            </span>{" "}
-                            that help me grow both personally and professionally.
+                                professional environments
+                            </span>
+                            .
                         </p>
 
                         <span className="absolute bottom-4 right-6 text-6xl font-serif text-blue-500/20 leading-none select-none">"</span>

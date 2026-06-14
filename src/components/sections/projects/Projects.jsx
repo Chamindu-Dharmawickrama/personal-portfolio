@@ -1,9 +1,21 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback, memo } from "react";
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./Projects.css";
 import { RevealOnScroll } from "../../common/RevealOnScroll";
 
 const projects = [
+    {
+        name: "Ask Your Docs",
+        tagline: "AI-Powered Document Q&A System",
+        description:
+            "Built a full stack Retrieval Augmented Generation (RAG) application that enables users to upload documents and ask context aware questions using semantic search and LLMs. Designed a scalable backend pipeline for document ingestion, chunking, embedding, and retrieval, with a modern React based frontend.",
+        technologies: ["FastAPI", "LangChain", "LangGraph", "GPT-4", "Pinecone", "React", "TypeScript", "PostgreSQL"],
+        pic: "../projects/askyourdocs.png",
+        link: "https://ikms-rag.vercel.app/",
+        git: "https://github.com/Chamindu-Dharmawickrama/ikms-multi-agent-rag",
+        accent: "#3b82f6",
+        accentRgb: "59,130,246",
+    },
     {
         name: "SHUTR",
         tagline: "AI-Powered Photography Platform",
@@ -102,14 +114,15 @@ const projects = [
     },
 ];
 
-/* Laptop Mockup Component */
-const LaptopMockup = ({ src, alt, accent }) => (
+/* Laptop Mockup Component — memoized to prevent re-render on every project switch */
+const LaptopMockup = memo(({ src, alt, accent }) => (
     <div className="laptop-wrapper">
         <div className="laptop-body" style={{ "--accent": accent }}>
             <div className="laptop-screen-bezel">
                 <div className="laptop-camera" />
                 <div className="laptop-screen">
-                    <img src={src} alt={alt} className="laptop-screenshot" />
+                    {/* loading="lazy" defers off-screen decode; decoding="async" moves it off main thread */}
+                    <img src={src} alt={alt} className="laptop-screenshot" loading="lazy" decoding="async" />
                     <div className="laptop-glare" />
                 </div>
             </div>
@@ -119,7 +132,8 @@ const LaptopMockup = ({ src, alt, accent }) => (
             </div>
         </div>
     </div>
-);
+));
+LaptopMockup.displayName = "LaptopMockup";
 
 /* Main Component */
 export const Projects = () => {
@@ -134,7 +148,7 @@ export const Projects = () => {
     const prevPrev = (current - 2 + total) % total;
     const nextNext = (current + 2) % total;
 
-    const goTo = (dir) => {
+    const goTo = useCallback((dir) => {
         if (animating) return;
         setDirection(dir);
         setAnimating(true);
@@ -144,7 +158,7 @@ export const Projects = () => {
             setAnimating(false);
             setDirection(null);
         }, 420);
-    };
+    }, [animating, total]);
 
     useEffect(() => () => clearTimeout(timeoutRef.current), []);
 
