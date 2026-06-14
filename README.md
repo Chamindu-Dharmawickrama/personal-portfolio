@@ -51,55 +51,84 @@ A modern, responsive portfolio website built with React and Vite, showcasing my 
 
 ## 🏗️ Project Structure
 
-```
+```text
 portfolio/
 ├── public/                          # Static assets
-│   ├── Chamindu Dharmawickrama.pdf   # Resume/CV
-│   ├── chamindu.jpg                  # Profile images
+│   ├── certificates/                # Certificate images
+│   │   ├── AI Engineering.webp
+│   │   ├── HULT PRIZE.webp
+│   │   └── Java OOP.webp
+│   ├── Chamindu Dharmawickrama.pdf  # Resume/CV
+│   ├── chamindu.jpg                 # Profile images
 │   ├── chaminduNew.jpg
 │   ├── logo/                        # Technology icons
 │   │   ├── css.png
 │   │   ├── django.png
+│   │   ├── express.png
+│   │   ├── fastapi.png
+│   │   ├── flutter.png
+│   │   ├── git.png
 │   │   ├── html.png
 │   │   ├── java.png
 │   │   ├── javascript.png
+│   │   ├── langchain.png
+│   │   ├── langgraph.png
 │   │   ├── mongodb.png
 │   │   ├── mysql.png
 │   │   ├── next.png
 │   │   ├── node.png
+│   │   ├── postgresql.png
 │   │   ├── python.png
 │   │   ├── react.png
-│   │   └── tailwind.png
-│   └── projects/                    # Project screenshots
-│       ├── booking.png
-│       ├── chroma.png
-│       ├── coffee.png
-│       ├── evergreen.png
-│       ├── portfolio.png
-│       ├── progression.png
-│       ├── shutr.png
-│       └── sms.png
+│   │   ├── tailwind.png
+│   │   └── typescript.png
+│   └── projects/                    # Project screenshots (Optimized WebP)
+│       ├── askyourdocs.webp
+│       ├── booking.webp
+│       ├── chroma.webp
+│       ├── coffee.webp
+│       ├── evergreen.webp
+│       ├── portfolio.webp
+│       ├── progression.webp
+│       ├── shutr.webp
+│       └── sms.webp
 ├── src/
-│   ├── components/
-│   │   ├── sections/               # Main page sections
-│   │   │   ├── Home.jsx           # Hero section with typing animation
-│   │   │   ├── About.jsx          # About, skills, education, certifications
-│   │   │   ├── Projects.jsx       # Project showcase with pagination
-│   │   │   └── Contact.jsx        # Contact form with EmailJS
-│   │   ├── Footer.jsx
-│   │   ├── LoadingScreen.jsx      # Animated loading screen
-│   │   ├── MobileMenu.jsx         # Mobile navigation
-│   │   ├── Navbar.jsx             # Desktop/mobile navigation
-│   │   └── RevealOnScroll.jsx     # Scroll animation component
 │   ├── assets/
-│   ├── App.jsx                    # Main application component
-│   ├── App.css                    # Component-specific styles
-│   ├── index.css                  # Global styles and animations
-│   └── main.jsx                   # Application entry point
-├── eslint.config.js
-├── index.html
-├── package.json
-├── vite.config.js
+│   │   └── react.svg
+│   ├── components/
+│   │   ├── common/                  # Reusable UI components
+│   │   │   ├── CursorBackground.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── LoadingScreen.jsx
+│   │   │   ├── MobileMenu.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   └── RevealOnScroll.jsx
+│   │   └── sections/                # Main page sections
+│   │       ├── about/               # About, skills, education, etc.
+│   │       │   ├── About.jsx
+│   │       │   ├── Certification.jsx
+│   │       │   ├── Education.jsx
+│   │       │   ├── Skills.jsx
+│   │       │   └── WorkExperience.jsx
+│   │       ├── contact/             # Contact form section
+│   │       │   └── Contact.jsx
+│   │       ├── home/                # Hero section components
+│   │       │   └── Home.jsx
+│   │       └── projects/            # Project showcase section
+│   │           ├── Projects.css
+│   │           └── Projects.jsx
+│   ├── App.css                      # Component-specific styles
+│   ├── App.jsx                      # Main application component
+│   ├── index.css                    # Global styles and animations
+│   └── main.jsx                     # Application entry point
+├── .env                             # Environment variables
+├── .gitignore
+├── eslint.config.js                 # ESLint configuration
+├── index.html                       # Entry HTML file
+├── package-lock.json
+├── package.json                     # Project dependencies and scripts
+├── vercel.json                      # Vercel deployment configuration
+├── vite.config.js                   # Vite configuration
 └── README.md
 ```
 
@@ -220,11 +249,13 @@ The portfolio is built with a mobile-first approach:
 
 ## 🔍 SEO and Performance
 
--   **Fast Loading**: Vite build optimization
--   **Responsive Images**: Optimized image sizes
--   **Semantic HTML**: Proper heading structure and landmarks
--   **Analytics**: Google Analytics 4 integration
--   **Meta Tags**: Proper page titles and descriptions
+-   **Image Optimization**: All heavy project and certificate images are converted to WebP format, reducing the total image payload by over 95%.
+-   **React Code Splitting**: Heavy components are dynamically loaded using `React.lazy` and `Suspense`, vastly improving initial load times.
+-   **Vercel Caching**: Implemented a custom `vercel.json` to leverage Vercel's Edge Network for aggressive caching (1 year) of static assets.
+-   **Fast Loading**: Vite build optimization with minimal asset sizes.
+-   **Semantic HTML**: Proper heading structure and landmarks.
+-   **Analytics**: Google Analytics 4 integration.
+-   **Meta Tags**: Proper page titles and descriptions.
 
 ## 📄 License
 
@@ -235,8 +266,8 @@ This project is open source and available under the [MIT License](LICENSE).
 **Chamindu Dharmawickrama**
 
 -   🌐 Portfolio: [Live Demo](https://chamindudharmawickrema.netlify.app/)
--   📧 Email: [Contact Form](#contact)
--   💼 LinkedIn: [Connect with me](https://linkedin.com/in/chamindu-dharmawickrama)
--   🐙 GitHub: [View my repositories](https://github.com/Chamindu-Dharmawickrema)
+-   📧 Email: [Contact Form](mailto:chamindudharmawickrema@gmail.com)
+-   💼 LinkedIn: [Connect with me](https://www.linkedin.com/in/chamindu-dharmawickrama-066295312/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B2PUynfIeR12XtnPlCw1RNw%3D%3D)
+-   🐙 GitHub: [View my repositories](https://github.com/Chamindu-Dharmawickrama)
 
 ---
