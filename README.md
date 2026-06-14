@@ -265,7 +265,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Chamindu Dharmawickrama**
 
--   🌐 Portfolio: [Live Demo](https://chamindudharmawickrema.netlify.app/)
+-   🌐 Portfolio: [Live Demo](https://chamindu-dharmawickrama.vercel.app/)
 -   📧 Email: [Contact Form](mailto:chamindudharmawickrema@gmail.com)
 -   💼 LinkedIn: [Connect with me](https://www.linkedin.com/in/chamindu-dharmawickrama-066295312/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B2PUynfIeR12XtnPlCw1RNw%3D%3D)
 -   🐙 GitHub: [View my repositories](https://github.com/Chamindu-Dharmawickrama)
