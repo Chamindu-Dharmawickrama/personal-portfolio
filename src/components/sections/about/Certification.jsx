@@ -12,7 +12,7 @@ const certificationData = [
         glowColor: "rgba(251,146,60,0.3)",
         borderColor: "rgba(251,146,60,0.5)",
         type: "Certificate",
-        image: "/certificates/Java OOP.jpg",
+        image: "/certificates/Java OOP.webp",
     },
     {
         title: "Hult Prize On-Campus Qualifier",
@@ -25,7 +25,7 @@ const certificationData = [
         glowColor: "rgba(250,204,21,0.3)",
         borderColor: "rgba(250,204,21,0.5)",
         type: "Achievement",
-        image: "/certificates/HULT PRIZE.jpg",
+        image: "/certificates/HULT PRIZE.webp",
     },
     {
         title: "AI Engineering Bootcamp",
@@ -40,7 +40,7 @@ const certificationData = [
         borderColor: "rgba(244,114,182,0.5)",
         type: "Certificate",
         highlight: "Outstanding",
-        image: "/certificates/AI Engineering.png",
+        image: "/certificates/AI Engineering.webp",
     },
 ];
 

@@ -10,7 +10,7 @@ const projects = [
         description:
             "Built a full stack Retrieval Augmented Generation (RAG) application that enables users to upload documents and ask context aware questions using semantic search and LLMs. Designed a scalable backend pipeline for document ingestion, chunking, embedding, and retrieval, with a modern React based frontend.",
         technologies: ["FastAPI", "LangChain", "LangGraph", "GPT-4", "Pinecone", "React", "TypeScript", "PostgreSQL"],
-        pic: "../projects/askyourdocs.png",
+        pic: "../projects/askyourdocs.webp",
         link: "https://ikms-rag.vercel.app/",
         git: "https://github.com/Chamindu-Dharmawickrama/ikms-multi-agent-rag",
         accent: "#3b82f6",
@@ -22,7 +22,7 @@ const projects = [
         description:
             "Built a full-stack AI-powered platform to connect clients with photographers across Sri Lanka, solving the challenge of finding photographers with suitable availability, pricing, and styles. The system supports intelligent search, real-time communication, portfolio management, booking, and scheduling.",
         technologies: ["Next.js", "Redux", "Django", "MongoDB"],
-        pic: "../projects/shutr.png",
+        pic: "../projects/shutr.webp",
         link: "https://shutr.live/",
         git: "https://github.com/SHUTR-TEAM?view_as=public",
         accent: "#6366f1",
@@ -34,7 +34,7 @@ const projects = [
         description:
             "Built a full-stack student management system with role-based access, featuring JWT auth, search, course management, and filtering. Supports both student and admin roles for managing courses and grades.",
         technologies: ["React", "Node.js", "Express", "PostgreSQL", "TailwindCSS"],
-        pic: "../projects/sms.png",
+        pic: "../projects/sms.webp",
         link: "",
         git: "",
         accent: "#22d3ee",
@@ -46,7 +46,7 @@ const projects = [
         description:
             "Developed a visually appealing and fully responsive coffee shop website featuring product listings, customer reviews, and social media integration. Emphasized clean UI/UX design and mobile-first responsiveness.",
         technologies: ["HTML", "CSS", "JavaScript"],
-        pic: "../projects/coffee.png",
+        pic: "../projects/coffee.webp",
         link: "",
         git: "",
         accent: "#f59e0b",
@@ -58,7 +58,7 @@ const projects = [
         description:
             "Developed a fully responsive personal portfolio website using ReactJS and TailwindCSS. The site showcases skills and projects with smooth animations for an enhanced user experience across all devices.",
         technologies: ["React", "TailwindCSS"],
-        pic: "../projects/chroma.png",
+        pic: "../projects/chroma.webp",
         link: "https://chromacraze.netlify.app/",
         git: "",
         accent: "#ec4899",
@@ -70,7 +70,7 @@ const projects = [
         description:
             "Developed a fully responsive web application for a Sri Lankan art workshop business using React.js and Tailwind CSS. Implemented interactive gallery features and conversion-optimized design.",
         technologies: ["React", "TailwindCSS"],
-        pic: "../projects/portfolio.png",
+        pic: "../projects/portfolio.webp",
         link: "https://chamindudharmawickrema.netlify.app/",
         git: "https://github.com/Chamindu-Dharmawickrema/personal-portfolio.git",
         accent: "#10b981",
@@ -82,7 +82,7 @@ const projects = [
         description:
             "Designed and developed a static website to raise awareness of environmental conservation. The site includes pages such as Home, Gallery, Quiz, Shop, Feedback, and About Us.",
         technologies: ["HTML", "CSS", "JavaScript"],
-        pic: "../projects/evergreen.png",
+        pic: "../projects/evergreen.webp",
         link: "",
         git: "",
         accent: "#84cc16",
@@ -94,7 +94,7 @@ const projects = [
         description:
             "Built a console-based Java application to manage plane seat reservations, using OOP principles and file I/O. Users can book seats, calculate prices, and store ticket details in uniquely named text files.",
         technologies: ["Java", "OOP"],
-        pic: "../projects/booking.png",
+        pic: "../projects/booking.webp",
         link: "",
         git: "https://github.com/Chamindu-Dharmawickrema/plane-ticket-booking-system-java.git",
         accent: "#f97316",
@@ -106,7 +106,7 @@ const projects = [
         description:
             "Created a Python-based system to classify and visualize student progression outcomes based on credit inputs. Integrated data validation, histogram visualization, and file-based result storage.",
         technologies: ["Python"],
-        pic: "../projects/progression.png",
+        pic: "../projects/progression.webp",
         link: "",
         git: "https://github.com/Chamindu-Dharmawickrema/student-progression-outcome-visualizer-python.git",
         accent: "#a78bfa",
