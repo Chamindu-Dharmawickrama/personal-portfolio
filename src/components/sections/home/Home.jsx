@@ -87,7 +87,7 @@ export const Home = () => {
 
                             <div className="grid grid-cols-2 gap-x-6 gap-y-5 mt-7 w-full max-w-xs mx-auto lg:flex lg:items-center lg:gap-0 lg:max-w-none lg:mx-0 lg:justify-start">
                                 {[
-                                    { value: "10+", label: "Projects" },
+                                    { value: "9+", label: "Projects" },
                                     { value: "1+", label: "Years of Experience" },
                                     { value: "6+", label: "Years of Learning" },
                                     { value: "20+", label: "Technologies" },

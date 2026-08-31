@@ -23,7 +23,7 @@ const workData = [
                 techStack: ["React", "TypeScript", "Material UI", "Zustand"]
             },
             {
-                name: "E-Channeling System",
+                name: "E-Channeling System ( Hospital Management System prototype )",
                 tag: "Full Stack",
                 tagColor: "from-violet-500 to-purple-400",
                 dotColor: "#8b5cf6",

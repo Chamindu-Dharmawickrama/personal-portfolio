@@ -84,10 +84,10 @@ export const Contact = () => {
                             <div className="min-w-0">
                                 <p className="text-[10px] font-bold tracking-[3px] uppercase text-white/30 mb-[6px] max-sm:mb-1">Email</p>
                                 <a
-                                    href="mailto:chamindudharmawickrema@gmail.com"
+                                    href="mailto:chamindudharmawickrama@gmail.com"
                                     className="text-[14px] max-sm:text-[13px] font-semibold text-white/90 transition-colors duration-200 block truncate max-sm:break-all hover:text-cyan-300 drop-shadow-sm"
                                 >
-                                    chamindudharmawickrema@gmail.com
+                                    chamindudharmawickrama@gmail.com
                                 </a>
                             </div>
                         </div>
