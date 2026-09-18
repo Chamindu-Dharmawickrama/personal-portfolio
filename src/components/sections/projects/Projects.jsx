@@ -121,8 +121,10 @@ const LaptopMockup = memo(({ src, alt, accent }) => (
             <div className="laptop-screen-bezel">
                 <div className="laptop-camera" />
                 <div className="laptop-screen">
-                    {/* loading="lazy" defers off-screen decode; decoding="async" moves it off main thread */}
-                    <img src={src} alt={alt} className="laptop-screenshot" loading="lazy" decoding="async" />
+                    {/* key forces a fresh <img> per src so an uncached image shows a
+                        blank frame instead of the browser holding the previous src's
+                        pixels on screen while the new one decodes. */}
+                    <img key={src} src={src} alt={alt} className="laptop-screenshot" decoding="async" />
                     <div className="laptop-glare" />
                 </div>
             </div>
@@ -161,6 +163,16 @@ export const Projects = () => {
     }, [animating, total]);
 
     useEffect(() => () => clearTimeout(timeoutRef.current), []);
+
+    // Warm the browser cache for every project image up front. Without this,
+    // the first navigation to an uncached project fires an on-demand fetch,
+    // and the <img> tag has nothing to show until it lands.
+    useEffect(() => {
+        projects.forEach((p) => {
+            const img = new Image();
+            img.src = p.pic;
+        });
+    }, []);
 
     // Arrow key navigation
     useEffect(() => {
