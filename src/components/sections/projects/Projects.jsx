@@ -1,5 +1,10 @@
 import { useState, useEffect, useRef, useCallback, memo } from "react";
-import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {
+    FaGithub,
+    FaExternalLinkAlt,
+    FaChevronLeft,
+    FaChevronRight,
+} from "react-icons/fa";
 import "./Projects.css";
 import { RevealOnScroll } from "../../common/RevealOnScroll";
 
@@ -9,7 +14,16 @@ const projects = [
         tagline: "AI-Powered Document Q&A System",
         description:
             "Built a full stack Retrieval Augmented Generation (RAG) application that enables users to upload documents and ask context aware questions using semantic search and LLMs. Designed a scalable backend pipeline for document ingestion, chunking, embedding, and retrieval, with a modern React based frontend.",
-        technologies: ["FastAPI", "LangChain", "LangGraph", "GPT-4", "Pinecone", "React", "TypeScript", "PostgreSQL"],
+        technologies: [
+            "FastAPI",
+            "LangChain",
+            "LangGraph",
+            "GPT-4",
+            "Pinecone",
+            "React",
+            "TypeScript",
+            "PostgreSQL",
+        ],
         pic: "../projects/askyourdocs.webp",
         link: "https://ikms-rag.vercel.app/",
         git: "https://github.com/Chamindu-Dharmawickrama/ikms-multi-agent-rag",
@@ -19,12 +33,11 @@ const projects = [
     {
         name: "SHUTR",
         tagline: "AI-Powered Photography Platform",
-        description:
-            "Built a full-stack AI-powered platform to connect clients with photographers across Sri Lanka, solving the challenge of finding photographers with suitable availability, pricing, and styles. The system supports intelligent search, real-time communication, portfolio management, booking, and scheduling.",
+        description: `SHUTR is a marketplace that helps clients in Sri Lanka find, book and pay professional photographers in one place. Clients can describe what they need in plain words, like "wedding photographer in Kandy under 1 lakh", and the platform ranks the best matches and explains why. Photographers get their own portfolio, booking calendar and dashboard, while clients can chat with them in real time, pay securely and leave verified reviews. An admin area helps keep accounts, bookings and payments running smoothly.`,
         technologies: ["Next.js", "Redux", "Django", "MongoDB"],
         pic: "../projects/shutr.webp",
-        link: "https://shutr.live/",
-        git: "https://github.com/SHUTR-TEAM?view_as=public",
+        link: "https://shutrv2.vercel.app/",
+        git: "https://github.com/Chamindu-Dharmawickrama/SHUTR",
         accent: "#6366f1",
         accentRgb: "99,102,241",
     },
@@ -124,7 +137,13 @@ const LaptopMockup = memo(({ src, alt, accent }) => (
                     {/* key forces a fresh <img> per src so an uncached image shows a
                         blank frame instead of the browser holding the previous src's
                         pixels on screen while the new one decodes. */}
-                    <img key={src} src={src} alt={alt} className="laptop-screenshot" decoding="async" />
+                    <img
+                        key={src}
+                        src={src}
+                        alt={alt}
+                        className="laptop-screenshot"
+                        decoding="async"
+                    />
                     <div className="laptop-glare" />
                 </div>
             </div>
@@ -150,17 +169,22 @@ export const Projects = () => {
     const prevPrev = (current - 2 + total) % total;
     const nextNext = (current + 2) % total;
 
-    const goTo = useCallback((dir) => {
-        if (animating) return;
-        setDirection(dir);
-        setAnimating(true);
-        clearTimeout(timeoutRef.current);
-        timeoutRef.current = setTimeout(() => {
-            setCurrent((c) => dir === "next" ? (c + 1) % total : (c - 1 + total) % total);
-            setAnimating(false);
-            setDirection(null);
-        }, 420);
-    }, [animating, total]);
+    const goTo = useCallback(
+        (dir) => {
+            if (animating) return;
+            setDirection(dir);
+            setAnimating(true);
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = setTimeout(() => {
+                setCurrent((c) =>
+                    dir === "next" ? (c + 1) % total : (c - 1 + total) % total,
+                );
+                setAnimating(false);
+                setDirection(null);
+            }, 420);
+        },
+        [animating, total],
+    );
 
     useEffect(() => () => clearTimeout(timeoutRef.current), []);
 
@@ -192,17 +216,15 @@ export const Projects = () => {
                 <div className="projects-header">
                     <h2 className="projects-title">
                         My{" "}
-                        <span className="projects-title-accent">
-                            Projects
-                        </span>
+                        <span className="projects-title-accent">Projects</span>
                     </h2>
                     <p className="projects-subtitle">
-                        {current + 1} / {total} — Navigate to explore all projects
+                        {current + 1} / {total} — Navigate to explore all
+                        projects
                     </p>
                 </div>
 
                 <div className="card-stack-scene">
-
                     <div
                         className={`card-ghost card-ghost-far card-ghost-left ${animating && direction === "next" ? "ghost-slide-left" : ""} ${animating && direction === "prev" ? "ghost-slide-right" : ""}`}
                         style={{ "--ghost-accent": projects[prevPrev].accent }}
@@ -231,21 +253,29 @@ export const Projects = () => {
                         <div className="card-glow-border" />
 
                         <div className="card-interior">
-
                             <div className="card-info-panel">
                                 <div className="card-project-number">
                                     {String(current + 1).padStart(2, "0")}
                                 </div>
 
-                                <h3 className="card-project-name">{project.name}</h3>
-                                <p className="card-project-tagline" style={{ color: project.accent }}>
+                                <h3 className="card-project-name">
+                                    {project.name}
+                                </h3>
+                                <p
+                                    className="card-project-tagline"
+                                    style={{ color: project.accent }}
+                                >
                                     {project.tagline}
                                 </p>
 
-                                <p className="card-project-desc">{project.description}</p>
+                                <p className="card-project-desc">
+                                    {project.description}
+                                </p>
 
                                 <div className="card-tech-stack">
-                                    <span className="card-tech-label">Tech Stack</span>
+                                    <span className="card-tech-label">
+                                        Tech Stack
+                                    </span>
                                     <div className="card-tech-pills">
                                         {project.technologies.map((tech, i) => (
                                             <span
@@ -321,10 +351,19 @@ export const Projects = () => {
                             <button
                                 key={i}
                                 className={`nav-dot ${i === current ? "nav-dot-active" : ""}`}
-                                style={i === current ? { background: project.accent, boxShadow: `0 0 10px ${project.accent}` } : {}}
+                                style={
+                                    i === current
+                                        ? {
+                                              background: project.accent,
+                                              boxShadow: `0 0 10px ${project.accent}`,
+                                          }
+                                        : {}
+                                }
                                 onClick={() => {
                                     if (i !== current && !animating) {
-                                        setDirection(i > current ? "next" : "prev");
+                                        setDirection(
+                                            i > current ? "next" : "prev",
+                                        );
                                         setAnimating(true);
                                         clearTimeout(timeoutRef.current);
                                         timeoutRef.current = setTimeout(() => {
