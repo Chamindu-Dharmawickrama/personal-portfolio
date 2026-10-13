@@ -143,7 +143,7 @@
     position: relative;
     width: 100%;
     max-width: 900px;
-    height: 480px;
+    height: 505px;
     /* Replaced backdrop-filter:blur(24px) — too expensive on low-end GPUs.
        Solid dark background delivers the same visual feel at zero blur cost. */
     background: rgba(16, 16, 26, 0.97);
@@ -274,7 +274,7 @@
     flex: 1;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
     margin: 0 0 18px;
 }
