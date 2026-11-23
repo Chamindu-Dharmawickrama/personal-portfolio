@@ -71,9 +71,13 @@ export const Home = () => {
                         <div className="text-center w-full  lg:text-left order-1 lg:order-1">
                             <div className="min-h-[8rem] sm:min-h-[9rem] md:min-h-[10rem]">
                                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] xl:text-[59px] font-bold leading-tight text-center lg:text-left ">
-                                    Hi, I'm <br />
-                                    <span className="bg-gradient-to-r from-blue-600 to-cyan-300 bg-clip-text text-transparent inline-block break-words">
-                                        {displayText}&nbsp;
+                                    {/* Full, static heading for Google and screen readers (the typewriter text is never complete) */}
+                                    <span className="sr-only">Hi, I'm Chamindu Dharmawickrama, Full Stack Developer</span>
+                                    <span aria-hidden="true">
+                                        Hi, I'm <br />
+                                        <span className="bg-gradient-to-r from-blue-600 to-cyan-300 bg-clip-text text-transparent inline-block break-words">
+                                            {displayText}&nbsp;
+                                        </span>
                                     </span>
                                 </h1>
                             </div>
